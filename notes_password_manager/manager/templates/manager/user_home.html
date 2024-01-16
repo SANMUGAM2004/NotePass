@@ -1,0 +1,113 @@
+<!-- manager/templates/manager/home.html -->
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <p>Click on the links below to navigate:</p>
+    <ul>
+        <li><a href="{% url 'notes_list' %}">Notes List</a></li>
+        <li><a href="{% url 'passwords_list' %}">Passwords List</a></li>
+        <li><a href="{% url 'add_note' %}">Add Note</a></li>
+        <li><a href="{% url 'add_password' %}">Add Password</a></li>
+    </ul>
+</body>
+</html> {% endcomment %}
+<!-- manager/templates/manager/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Home Page, {{ user.username }}!</h1>
+    </header>
+    <div class="container">
+        <p>Click on the links below to navigate:</p>
+        <ul class="navigation">
+            <li><a class="button" href="{% url 'notes_list'%}">Notes List</a></li>
+            <li><a class="button" href="{% url 'passwords_list'%}">Passwords List</a></li>
+            <li><a class="button" href="{% url 'add_note' %}">Add Note</a></li>
+            <li><a class="button" href="{% url 'add_password' %}">Add Password</a></li>
+        </ul>
+        <script>
+            var csrf_token = "{{ csrf_token }}";
+            // You can now use the csrf_token in your JavaScript code if needed
+            console.log("CSRF Token:", csrf_token);
+        </script>
+    </div>
+</body>
+</html>

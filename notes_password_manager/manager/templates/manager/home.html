@@ -1,0 +1,74 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App Name</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            border-radius: 50%;  
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .navigation {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navigation li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="data:image/png;base64,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" alt="Your Logo" class="logo">
+        <h1>Welcome to NotePass!</h1>
+    </header>
+    <div class="container">
+        <p>Choose an option below:</p>
+        <ul class="navigation">
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'user_login' %}">Login</a></li>
+        </ul>
+    </div>
+</body>
+</html>
